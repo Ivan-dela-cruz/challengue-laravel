@@ -1,7 +1,7 @@
 ---
 name: Topic
 about: This Topic template's
-title: ''
+title: T:[TDB](SCOPE) Add a clear and short description to Topic
 labels: ''
 assignees: ''
 

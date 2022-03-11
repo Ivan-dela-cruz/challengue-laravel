@@ -1,7 +1,7 @@
 ---
 name: Issue
 about: This issue template's
-title: Issue
+title: I:[TIME](SCOPE)  Add a clear and short description
 labels: issue
 assignees: ''
 
