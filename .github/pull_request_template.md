@@ -37,4 +37,3 @@ _Specify the version number from the VERSION file that this PR will introduce.
 As a reminder, the PR should increment the version number in the VERSION file
 by 1 MINOR point (i.e. v0.1.0 changes to v0.2.0). See the [Semantic Versioning
 2.0.0](http://semver.org/) spec for more detail._
-
