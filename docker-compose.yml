@@ -1,0 +1,41 @@
+version: '3.7'
+services:
+  applaravel:
+    build:
+      context: .
+      dockerfile: .docker/Dockerfile
+    image: 'applaravel'
+    ports:
+      - "8012:80"
+    volumes:
+      - ./src:/var/www/html
+    networks:
+      - app_network
+  dblaravel:
+    image: mysql:5.7
+    ports:
+      - "3316:3306"
+    environment:
+      MYSQL_DATABASE: acl
+      MYSQL_USER: acl
+      MYSQL_PASSWORD: root1234
+      MYSQL_ROOT_PASSWORD: root1234
+      SERVICE_TAGS: dev
+      SERVICE_NAME: mysql
+    volumes:
+      - ./dblaravel:/var/lib/mysql
+    networks:
+      - app_network
+  adminer2:
+    image: adminer
+    ports:
+      - 8083:8080
+    environment: 
+      ADMINER_DESIGN: dracula
+      PHP_POST_MAX_SIZE: 512M
+      PHP_CLI_MEMORY_LIMIT: 512M
+      PHP_UPLOAD_MAX_FILESIZE: 512M
+# Network
+networks:
+  app_network:
+    driver: bridge
