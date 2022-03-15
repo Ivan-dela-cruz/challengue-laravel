@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\PlaceController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,5 +23,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::controller(CategoryController::class)->group(function () {
     Route::get('/categories', 'index');
     Route::get('/categories/{id}', 'show');
+});
+
+Route::controller(PlaceController::class)->group(function () {
+    Route::get('/places/{id}', 'show');
 });
 
