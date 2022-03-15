@@ -26,6 +26,7 @@ Route::controller(CategoryController::class)->group(function () {
 });
 
 Route::controller(PlaceController::class)->group(function () {
+    Route::get('/places', 'index');
     Route::get('/places/{id}', 'show');
 });
 
