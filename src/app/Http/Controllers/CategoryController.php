@@ -17,4 +17,16 @@ class CategoryController extends Controller
         $categories = Category::paginate(20);
         return response()->json($categories, 200);
     }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        $category = Category::find($id);
+        return response()->json($category, 200);
+    }
 }
